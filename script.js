@@ -29,6 +29,7 @@ const logInBtn = document.getElementById('submitL');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
+const h1 = document.getElementById('title');
 
 // Sign-Up Function
 const signUpUser = () => {
@@ -82,6 +83,7 @@ const saveUserToDatabase = (user) => {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is signed in:", user.email);
+    h1.innerHTML = "Welcome, " + usernameInput.value;
   } else {
     console.log("No user is signed in.");
   }
