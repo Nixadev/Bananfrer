@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,16 +22,19 @@ const analytics = getAnalytics(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth();
 
+//submit btn
+const submit = document.getElementById('submit');
+
+
 // Clicking on a button
-document.addEventListener("DOMContentLoaded", () => {
-    submit.addEventListener("click", function (event) {
+submit.addEventListener("click", function (event) {
+
 
         event.preventDefault(); // Prevent any default form submission behavior
 
         // initialising the credentials
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
-        const submit = document.getElementById('submit');
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
         // Signup
         createUserWithEmailAndPassword(auth, email, password)
@@ -48,6 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
          });
 
         // Login
-        
+
     });
-});

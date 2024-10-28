@@ -1,5 +1,5 @@
 * {
-    background: #35002c;
+    background: #21001a;
     color: #c3fffc;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -18,11 +18,11 @@ ul {
 
 li {
     list-style: none;
-    background-color: #70005d;
+    background-color: #560045;
     padding: 0; /* Supprime le padding de <li> */
     margin-bottom: 4vh; /* Supprime toute marge de <li> */
     flex-grow: 1; /* Permet à chaque <li> de prendre la même largeur */
-    border: solid #c3fffc 0.7px;
+    border: solid #007771 0.7px;
 }
 
 li a {
@@ -35,7 +35,7 @@ li a {
     padding-block: 1.6vh;
     color: inherit;
     text-decoration: none;
-    background-color: #70005d;
+    background-color: #560045;
     box-sizing: border-box;
 }
 
@@ -51,19 +51,19 @@ form div {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: #70005d solid 1px;
+    border: #e600be solid 1px;
     padding: 3%;
 }
 form input#submit {
     padding-inline: 3%;
     padding-block: 1%;
-    border: 0.4px solid #c3fffc;
+    border: 0.4px solid #007771;
     border-radius: 4px;
 }
 form div input{
     padding-block: 7%;
     padding-inline: 10%;
     margin-top: 4%;
-    border: 0.4px solid #c3fffc;
+    border: 0.4px solid #007771;
     border-radius: 4px;
 }
