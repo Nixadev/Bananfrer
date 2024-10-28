@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 // Import the necessary Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
@@ -29,7 +40,6 @@ const logInBtn = document.getElementById('submitL');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
-const h1 = document.getElementById('title');
 
 // Sign-Up Function
 const signUpUser = () => {
@@ -65,6 +75,7 @@ const logInUser = () => {
 // Save User Info to Firebase Database
 const saveUserToDatabase = (user) => {
   const username = usernameInput.value;
+  document.cookie = username;
 
   set(ref(database, 'users/' + user.uid), {
     email: user.email,
@@ -83,7 +94,8 @@ const saveUserToDatabase = (user) => {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is signed in:", user.email);
-    h1.innerHTML = "Welcome, " + usernameInput.value;
+    var h1 = document.getElementById('title');
+    h1.textContent = "You are signed in, " + document.cookie;
   } else {
     console.log("No user is signed in.");
   }
