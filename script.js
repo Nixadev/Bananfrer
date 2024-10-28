@@ -24,8 +24,8 @@ const auth = getAuth();
 const database = getDatabase(app);
 
 // Button and input field references
-const signUpBtn = document.getElementById('signUp');
-const logInBtn = document.getElementById('logIn');
+const signUpBtn = document.getElementById('submit');
+const logInBtn = document.getElementById('submit');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
